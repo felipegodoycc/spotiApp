@@ -1,3 +1,8 @@
 <div class="container">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est sint temporibus minima laboriosam perferendis eaque tenetur voluptatibus iure necessitatibus adipisci quia corrupti, libero nulla suscipit facilis nostrum optio ipsa consectetur.</p>
+  <mat-card *ngFor="let album of albums">
+    <mat-card-title>{{ album.label }}</mat-card-title>
+    <mat-card-content>
+      <img [src]="album.images[0].url" alt="">
+    </mat-card-content>
+  </mat-card>
 </div>

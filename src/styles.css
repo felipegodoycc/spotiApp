@@ -4,5 +4,7 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .container {
-    padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
 }
