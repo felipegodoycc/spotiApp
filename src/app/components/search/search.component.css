@@ -5,13 +5,17 @@
 }
 
 .results{
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .results-tracks{
+    width: 50%;
     flex-grow: 1;
 }
 
 .results-artists{
+    width: 50%;
     flex-grow: 1;
 }

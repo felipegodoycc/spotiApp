@@ -1,0 +1,7 @@
+<mat-card class="track">
+    <mat-card-title>{{ item.name }} - {{ item.artists[0].name}}</mat-card-title>
+    <mat-card-content>
+        <img *ngIf="!item.uri" [src]="item.album.images | noimage" alt="">
+        <iframe *ngIf="item.uri" [src]="item.uri | domseguro: 'https://open.spotify.com/embed?uri='" width="250" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    </mat-card-content>
+</mat-card>

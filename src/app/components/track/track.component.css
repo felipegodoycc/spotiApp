@@ -1,5 +1,6 @@
-.mat-card.artista {
-    max-width: 200px;
+.mat-card.track {
+    min-width: 260px;
+    max-width: 300px;
     flex-grow: 1;
     margin: 5px;
 }

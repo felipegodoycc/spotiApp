@@ -23,6 +23,7 @@ export class SearchComponent implements OnInit {
         this.tracks = res.tracks.items;
         this.artists = res.artists.items;
         this.loading = false;
+        console.log(this.artists)
       })  
     }
     else {

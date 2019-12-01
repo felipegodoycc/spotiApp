@@ -20,6 +20,8 @@ import { RouterModule } from '@angular/router';
 import { routes } from './app.routes';
 import { HttpClientModule } from '@angular/common/http';
 import { NoimagePipe } from './pipes/noimage.pipe';
+import { DomseguroPipe } from './pipes/domseguro.pipe';
+import { TrackComponent } from './components/track/track.component';
 
 // RUTAS
 
@@ -31,7 +33,9 @@ import { NoimagePipe } from './pipes/noimage.pipe';
     HomeComponent,
     ArtistaComponent,
     SearchComponent,
-    NoimagePipe
+    NoimagePipe,
+    DomseguroPipe,
+    TrackComponent
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,6 @@
-<p>artista works!</p>
+<mat-card class="artista">
+    <mat-card-title>{{ artista.name }}</mat-card-title>
+    <mat-card-content>
+        <img [src]="artista.images | noimage" alt="">
+    </mat-card-content>
+</mat-card>

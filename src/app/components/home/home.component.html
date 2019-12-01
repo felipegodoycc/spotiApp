@@ -1,11 +1,7 @@
 <div class="container">
+  <h3 class=".mat-h3"> Bienvenido </h3>
   <div style="width: 100%;" >
       <mat-spinner style="margin:0 auto;" *ngIf="loading"></mat-spinner>
   </div>    
-  <mat-card *ngFor="let item of items">
-    <mat-card-title>{{ item.track.name }}</mat-card-title>
-    <mat-card-content>
-      <img [src]="item.track.album.images | noimage" alt="">
-    </mat-card-content>
-  </mat-card>
+  <app-track *ngFor="let item of items" [item]="item.track"></app-track>
 </div>
