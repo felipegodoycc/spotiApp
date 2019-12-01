@@ -5,12 +5,14 @@
     <div style="width: 100%;" >
         <mat-spinner style="margin:0 auto;" *ngIf="loading"></mat-spinner>
     </div>    
-    <div *ngIf="!loading" class="container">
+    <div *ngIf="!loading" class="container">        
         <div class="results results-artists">
+            <h3 style="width: 80%;margin:0 auto;">Artistas</h3>
             <p *ngIf="artists.length == 0"> No hay resultados </p>
             <app-artista *ngFor="let artist of artists" [artista]="artist"></app-artista>
         </div>
         <div class="results results-tracks">
+            <h3 style="width: 80%;margin:0 auto;">Canciones</h3>
             <p *ngIf="tracks.length == 0"> No hay resultados </p>
             <app-track *ngFor="let track of tracks" [item]="track"></app-track>
         </div>
