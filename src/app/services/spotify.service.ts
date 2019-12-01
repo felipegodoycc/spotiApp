@@ -1,25 +1,32 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { map } from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'
 })
 export class SpotifyService {
 
-
-  token = 'BQCoNBB4TSq2dWJt0Df1IzDO9cc8V9T1BK_yArdDnq-7l5Vqo6WxhuZlkNa4ZU-VOPLjb_i64kjGTRAuVsBDtDDzlOLgH4FtTWYUt0DiOdPeV6GWy-x9_vkfhih8a1JW7-Bh8Qg832RHWtw';
+  private token = 'BQAGidLuEUJmRrsd2wDMqwQM3Rh7E9Y6HYc6xeKNp4TExAh8PUOAg2ITguoH96kj8le6iEtl1aoqnFLvoSe0rm_YxRCNIpLcmWruSBnNN3_p_AtSqB55vhF1ICXng5NyCDw7WTQHUnbTEoZmYtAccv9Q5g';
+  private headers = new HttpHeaders({
+    Authorization: `Bearer ${this.token}`
+  });
 
   constructor( private http: HttpClient) {
     console.log('Servicio spotify iniciado!');
-   }
+    console.log('Token ', this.token)
+  }
 
   getNewReleases() {
-    const headers = new HttpHeaders({
-      Authorization: `Bearer ${this.token}`
-    });
+    const tracksUrl = 'https://api.spotify.com/v1/me/tracks?market=ES&limit=20&offset=0'
     return this.http.get(
-      'https://api.spotify.com/v1/albums?ids=382ObEPsp2rxGrnsizN5TX%2C1A2GTWGtFfWp7KSQTwWOyo%2C2noRn2Aes5aoNVsU6iWThc&market=ES',
-      {headers}
-    );
+        tracksUrl,
+        { headers: this.headers }
+    )
+  }
+
+  buscarItem(termino:string){
+    const searchUrl = `https://api.spotify.com/v1/search?q=${termino}&type=track%2Cartist&market=ES&limit=10&offset=0`
+    return this.http.get(searchUrl, {headers: this.headers})
   }
 }

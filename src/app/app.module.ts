@@ -11,12 +11,15 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'; 
 import { HomeComponent } from './components/home/home.component';
 import { ArtistaComponent } from './components/artista/artista.component';
 import { SearchComponent } from './components/search/search.component';
 import { RouterModule } from '@angular/router';
 import { routes } from './app.routes';
 import { HttpClientModule } from '@angular/common/http';
+import { NoimagePipe } from './pipes/noimage.pipe';
 
 // RUTAS
 
@@ -27,7 +30,8 @@ import { HttpClientModule } from '@angular/common/http';
     CoreComponent,
     HomeComponent,
     ArtistaComponent,
-    SearchComponent
+    SearchComponent,
+    NoimagePipe
   ],
   imports: [
     BrowserModule,
@@ -40,6 +44,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     MatListModule,
     MatCardModule,
+    MatInputModule,
+    MatProgressSpinnerModule,
     HttpClientModule
   ],
   providers: [],

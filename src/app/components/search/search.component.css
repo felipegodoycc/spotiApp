@@ -1,0 +1,17 @@
+.full-width {
+    width: 100%;
+    padding: 0 10px 0 10px;
+    margin: auto;
+}
+
+.results{
+    text-align: center;
+}
+
+.results-tracks{
+    flex-grow: 1;
+}
+
+.results-artists{
+    flex-grow: 1;
+}

@@ -1,1 +1,21 @@
-<p>search works!</p>
+<div class="container">
+    <mat-form-field class="full-width">
+            <input matInput #termino (keyup)="buscar(termino.value)" type="text" class="form-control" placeholder="Buscar..." >
+    </mat-form-field>
+    <div style="width: 100%;" >
+        <mat-spinner style="margin:0 auto;" *ngIf="loading"></mat-spinner>
+    </div>    
+    <div *ngIf="!loading" class="results results-artists">
+        <p *ngIf="artists.length == 0"> No hay resultados </p>
+        <ul>
+            <li *ngFor="let artist of artists">{{ artist.name }} </li>
+        </ul>
+    </div>
+    <div class="results results-tracks">
+        <p *ngIf="tracks.length == 0"> No hay resultados </p>
+        <ul>
+            <li *ngFor="let track of tracks">{{ track.name }} - {{ track.artists[0].name }}</li>
+        </ul>
+    </div>
+    
+</div>
