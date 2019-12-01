@@ -1,5 +1,7 @@
 # SpotiApp
 
+Aplicacion desarrollada utilizando el API de Spotify. Requiere generar un token desde PostMan o desde el WebConsole de Spotify Developers e ingresarlo en el servicio de Spotify. En una futura version, se planea crear un servicio backend que genere automaticamente y entregue este token.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
 
 ## Development server
